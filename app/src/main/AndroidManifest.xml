@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ng.com.blogspot.httpofficialceo.cryptocompare">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/cryptocompareicon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ETHActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="ETH Price List"/>
+        <activity android:name=".BTCActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="BTC Price List"/>
+        <activity android:name=".ETHConversion"
+            android:configChanges="orientation|screenSize"
+            android:label="ETH Conversion Screen"/>
+        <activity android:name=".BTCConversion"
+            android:configChanges="orientation|screenSize"
+            android:label="BTC Conversion Screen"></activity>
+    </application>
+
+</manifest>
