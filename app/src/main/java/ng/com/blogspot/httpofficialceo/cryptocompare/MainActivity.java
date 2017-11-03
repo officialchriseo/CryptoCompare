@@ -1,8 +1,13 @@
 package ng.com.blogspot.httpofficialceo.cryptocompare;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,11 +22,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.list_view);
 
         lv = (ListView) findViewById(R.id.coins_lv);
         adapter = new CustomCoinAdapter(this, getData());
         lv.setAdapter(adapter);
+
 
     }
 
@@ -42,5 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         return coinListModels;
     }
+
+
 
 }

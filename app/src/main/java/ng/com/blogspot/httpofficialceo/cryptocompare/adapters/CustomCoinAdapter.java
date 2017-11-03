@@ -8,13 +8,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import ng.com.blogspot.httpofficialceo.cryptocompare.BTCActivity;
 import ng.com.blogspot.httpofficialceo.cryptocompare.ETHActivity;
-import ng.com.blogspot.httpofficialceo.cryptocompare.MainActivity;
 import ng.com.blogspot.httpofficialceo.cryptocompare.R;
 import ng.com.blogspot.httpofficialceo.cryptocompare.models.CoinListModel;
 
@@ -53,7 +51,7 @@ public class CustomCoinAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         if(convertView==null)
         {
-            convertView= LayoutInflater.from(mContext).inflate(R.layout.coin_model,parent,false);
+            convertView= LayoutInflater.from(mContext).inflate(R.layout.activity_main,parent,false);
         }
         final CoinListModel coinListModel= (CoinListModel) this.getItem(position);
         ImageView coinImage =  convertView.findViewById(R.id.coinImage);

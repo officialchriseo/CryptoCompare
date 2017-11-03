@@ -122,6 +122,5 @@ public class BTCActivity extends AppCompatActivity implements Callback<BTC_POJO>
 
     }
 
-
 }
 

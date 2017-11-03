@@ -1,7 +1,10 @@
 package ng.com.blogspot.httpofficialceo.cryptocompare;
 
+import android.content.Context;
 import android.content.Intent;
 import android.icu.text.DecimalFormat;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class BTCConversion extends AppCompatActivity {
 
@@ -85,6 +89,16 @@ public class BTCConversion extends AppCompatActivity {
     }
 
     public void setSharedResult(){
+
+        if(etInput.getText().toString().isEmpty() || etInput.getText().length() == 0){
+
+            Toast.makeText(this, "Nothing to share", Toast.LENGTH_SHORT).show();
+        }else if (etInput.getText().toString().equals("0")){
+
+            Toast.makeText(this, "Sorry, can't share zero result", Toast.LENGTH_SHORT).show();
+        }
+
+        else{
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
         shareIntent.putExtra(Intent.EXTRA_TEXT, etInput.getText().toString()
@@ -92,6 +106,9 @@ public class BTCConversion extends AppCompatActivity {
         startActivity(Intent.createChooser(shareIntent, "Share Via"));
 
     }
+    }
+
+
 
 }
 

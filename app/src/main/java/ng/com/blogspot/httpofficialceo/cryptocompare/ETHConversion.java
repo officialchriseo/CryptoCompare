@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ETHConversion extends AppCompatActivity {
 
@@ -86,14 +87,21 @@ public class ETHConversion extends AppCompatActivity {
         tvOutputRate.setText(decimalFormat.format(output));
     }
 
-    public void setSharedResult(){
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, etInput.getText().toString()
-                + " ETH" + " = " + tvOutputRate.getText().toString() + " " +currencyName);
-        startActivity(Intent.createChooser(shareIntent, "Share Via"));
+    public void setSharedResult() {
+        if (etInput.getText().toString().isEmpty() || etInput.getText().length() == 0) {
 
+            Toast.makeText(this, "Nothing to share", Toast.LENGTH_SHORT).show();
+        } else if (etInput.getText().toString().equals("0")) {
+
+            Toast.makeText(this, "Sorry, can't share zero result", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent shareIntent = new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plain");
+            shareIntent.putExtra(Intent.EXTRA_TEXT, etInput.getText().toString()
+                    + " ETH" + " = " + tvOutputRate.getText().toString() + " " + currencyName);
+            startActivity(Intent.createChooser(shareIntent, "Share Via"));
+
+        }
     }
-
 }
 

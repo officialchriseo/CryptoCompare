@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ng.com.blogspot.httpofficialceo.cryptocompare">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,18 +19,22 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".ETHActivity"
+        <activity
+            android:name=".ETHActivity"
             android:configChanges="orientation|screenSize"
-            android:label="ETH Price List"/>
-        <activity android:name=".BTCActivity"
+            android:label="ETH Price List" />
+        <activity
+            android:name=".BTCActivity"
             android:configChanges="orientation|screenSize"
-            android:label="BTC Price List"/>
-        <activity android:name=".ETHConversion"
+            android:label="BTC Price List" />
+        <activity
+            android:name=".ETHConversion"
             android:configChanges="orientation|screenSize"
-            android:label="ETH Conversion Screen"/>
-        <activity android:name=".BTCConversion"
+            android:label="ETH Conversion Screen" />
+        <activity
+            android:name=".BTCConversion"
             android:configChanges="orientation|screenSize"
-            android:label="BTC Conversion Screen"></activity>
+            android:label="BTC Conversion Screen" />
     </application>
 
 </manifest>
